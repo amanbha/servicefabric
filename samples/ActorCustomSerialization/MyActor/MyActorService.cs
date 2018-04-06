@@ -24,7 +24,6 @@ namespace MyActor
 
         protected override Task OnOpenAsync(ReplicaOpenMode openMode, CancellationToken cancellationToken)
         {
-            //this.actorServiceRemotingMessageDispatcher = new ActorServiceRemotingDispatcher(this, this.messageBodyFactory);
             return Task.FromResult(true);
         }
 
