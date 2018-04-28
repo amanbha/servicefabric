@@ -33,6 +33,9 @@ namespace Stateless1
         {
             // Custom events can be hooked here.
             // Information from Headers can be extracted here.
+            var messageHeaders = requestMessage.GetHeader();
+            var interfaceId = messageHeaders.InterfaceId;
+            var methodId = messageHeaders.MethodId;
             CustomRemotingEvents.RaiseReceiveRequest(string.Empty);
             var response = this.innerHandler.HandleRequestResponseAsync(requestContext, requestMessage);
             CustomRemotingEvents.RaiseSendResponse(string.Empty);
